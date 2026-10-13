@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>S3 NAV DISPLAY Web Flasher</title>
+  <script
+    type="module"
+    src="https://unpkg.com/esp-web-tools@10.1.1/dist/web/install-button.js?module"
+  ></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, sans-serif;
+      background: #101820;
+      color: #eef3f7;
+    }
+    body {
+      max-width: 720px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    main {
+      background: #192733;
+      border: 1px solid #344957;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    h1 {
+      color: #ffca54;
+    }
+    .warning {
+      border-left: 4px solid #ffb000;
+      padding-left: 1rem;
+    }
+    code {
+      overflow-wrap: anywhere;
+    }
+    esp-web-install-button {
+      display: block;
+      margin: 1.5rem 0;
+    }
+    button {
+      width: 100%;
+      padding: .9rem;
+      border: 0;
+      border-radius: 7px;
+      background: #ffb000;
+      color: #101820;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    small {
+      color: #b0bec5;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>S3 NAV DISPLAY</h1>
+    <p><strong>USB Web Flasher / USB-Webflasher</strong></p>
+    <p class="warning">
+      Experimental educational prototype. Not certified and not suitable for
+      flight navigation.<br>
+      Experimenteller Lernprototyp. Nicht zertifiziert und nicht fuer
+      Flugnavigation geeignet.
+    </p>
+    <p>
+      Connect the ESP32-S3 by USB, select its serial port, and install the
+      sanitized firmware. The image contains no Wi-Fi credentials or private
+      coordinates.
+    </p>
+    <p>
+      ESP32-S3 per USB verbinden, den seriellen Port auswaehlen und die
+      bereinigte Firmware installieren. Das Image enthaelt keine
+      WLAN-Zugangsdaten oder privaten Koordinaten.
+    </p>
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate">Connect and install / Verbinden und installieren</button>
+      <span slot="unsupported">
+        Web Serial is unavailable. Use a current Chromium-based browser on
+        HTTPS or localhost.
+      </span>
+    </esp-web-install-button>
+    <small>
+      Firmware installation writes the bootloader, no-OTA partition table,
+      boot application, and application image. Stored settings are preserved
+      unless an erase operation is explicitly selected.
+    </small>
+  </main>
+</body>
+</html>
